@@ -1,0 +1,10 @@
+requests>=2.32
+beautifulsoup4>=4.12
+lxml>=5.4
+readability-lxml>=0.8.4
+trafilatura>=2.0.0
+python-dotenv>=1.0
+tenacity>=8.2
+playwright>=1.54
+streamlit>=1.32 
+google-genai
