@@ -11,6 +11,17 @@ try:
 except Exception:
     _ENV_LOADED = False
 
+for k in (
+    "GOOGLE_API_KEY",
+    "GEMINI_MODEL",
+    "GEMINI_FALLBACK_MODELS",
+    "REQUEST_TIMEOUT",
+    "PLAYWRIGHT_TIMEOUT",
+):
+    v = st.secrets.get(k, None)
+    if v is not None and not os.getenv(k):
+        os.environ[k] = str(v)
+
 # Extractor
 from extractor.fetcher import fetch_html
 from extractor.article_extract import extract_article
